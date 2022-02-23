@@ -111,7 +111,7 @@ alias mntd="sudo mount /dev/sda3 ~/wind"
 alias luamake=/home/earth/lua-language-server/3rd/luamake/luamake
 
 alias exat2="exa --tree --level=2 --icons"
-alias l="exa --icons -la"
+alias l="exa --icons -laF"
 alias pamixerset="pamixer --set-volume"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -122,3 +122,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 # colorscript -r
 
 export EDITOR="/usr/bin/nvim"
+
+source ~/.xinitrc
+
+systemctl --user start redshift
