@@ -1,0 +1,32 @@
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                       7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+
+###### Sample crontab ######
+
+# Empty temp folder every Friday at 5pm
+# 0 5 * * 5 rm -rf /tmp/*
+
+# Backup images to Google Drive every night at midnight
+# 0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
+
+# Every 1st and 15th midnight of every month
+# 0 0 1,15 * * command
+
+# Every 10 minutes of every day
+# */10 * * * * command
+
+# Every 3 days at midnight of every month
+# 0 0 */3 * * command
+
+# Every hour between 0 - 5 hour on sunday
+# 0 0-5 * * 0 command
+
+# 30 mon-fri 9am-5pm
+# */30 9-17 * * 1-5 command
