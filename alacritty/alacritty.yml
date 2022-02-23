@@ -890,4 +890,3 @@ colors: *everforest_dark_hard
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
-  - { key: N, mods: Control, action: SpawnNewInstance }
