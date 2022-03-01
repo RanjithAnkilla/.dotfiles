@@ -107,12 +107,17 @@ alias reboot="systemctl reboot"
 alias poweroff="systemctl poweroff"
 alias mntc="sudo mount /dev/sda2 ~/winc"
 alias mntd="sudo mount /dev/sda3 ~/wind"
+alias cdsmb="cd /run/user/1000/gvfs"
 
 alias luamake=/home/earth/lua-language-server/3rd/luamake/luamake
 
 alias exat2="exa --tree --level=2 --icons"
 alias l="exa --icons -laF"
-alias pamixerset="pamixer --set-volume"
+alias paget="pamixer --get-volume"
+alias paset="pamixer --set-volume"
+alias pabi="pamixer --allow-boost -i"
+alias pabd="pamixer --allow-boost -d"
+alias pkillblocksv="pkill -RTMIN+10 dwmblocks"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -122,7 +127,3 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 # colorscript -r
 
 export EDITOR="/usr/bin/nvim"
-
-source ~/.xinitrc
-
-systemctl --user start redshift

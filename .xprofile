@@ -1,0 +1,24 @@
+#!/bin/sh
+
+nitrogen --restore &
+
+systemctl --user start redshift
+
+autostart="alacritty firefox"
+
+for program in $autostart; do
+	pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
+
+export PATH=$PATH:$HOME/.local/bin
+
+dwmblocks &
+
+sxhkd &
+
+xset r rate 300 50
+
+xmodmap ~/.xmodmap
