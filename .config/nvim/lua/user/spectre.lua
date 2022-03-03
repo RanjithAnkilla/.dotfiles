@@ -92,8 +92,8 @@ spectre.setup({
 				"-s",
 			},
 			options = {
-				["ignore-case"] = {
 					value = "-i",
+        ["ignore-case"] = {
 					icon = "[I]",
 					desc = "ignore case",
 				},

@@ -75,7 +75,8 @@ gps.setup {
   --}
   -- },
 
-  separator = " " .. icons.ui.ChevronRight .. " ",
+  -- separator = " " .. icons.ui.ChevronRight .. " ",
+  separator = " " .. "" .. " ",
 
   -- limit for amount of context shown
   -- 0 means no limit

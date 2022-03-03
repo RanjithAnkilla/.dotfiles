@@ -16,4 +16,6 @@ else
   echo ﱝ && exit
 fi
 
+notify-send --icon=/home/earth/Pictures/icons/bird-32.png -t 500 "$icon $vol%"
+
 echo "$icon $vol%"

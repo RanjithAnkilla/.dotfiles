@@ -36,8 +36,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<M-J>", ":m .+1<CR>==", opts)
+keymap("n", "<M-K>", ":m .-2<CR>==", opts)
 
 
 -- Source current buffer
@@ -47,11 +47,11 @@ keymap('n', '<leader><CR>', ':so ~/.config/nvim/init.lua<CR>', opts)
 keymap('n', '<leader>Y', 'gg\"+yG', opts)
 
 -- page up and down
-keymap("n", "<M-u>", "<C-u>", opts)
-keymap("n", "<M-d>", "<C-d>", opts)
+keymap("n", "<M-U>", "<C-u>", opts)
+keymap("n", "<M-D>", "<C-d>", opts)
 
 -- fix indent
-keymap("n", "<M-a>", ":set indentexpr=<CR>", opts)
+-- keymap("n", "<M-a>", ":set indentexpr=<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -63,16 +63,16 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==gv", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==gv", opts)
+keymap("v", "<M-J>", ":m .+1<CR>==gv", opts)
+keymap("v", "<M-K>", ":m .-2<CR>==gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<M-J>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<M-K>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -82,7 +82,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Custom
-keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+-- keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
 keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
@@ -128,7 +128,7 @@ keymap("v", ">", ">gv", opts)
 
 -- format
 -- map('n', '<leader><leader>f', ':%! prettier --single-quote %<CR>', opts)
-keymap('n', '<leader><leader>f', ':Neoformat<CR>', opts)
+keymap('n', '<M-F>', ':Neoformat<CR>', opts)
 
 keymap('v', 'p', '"_dP', opts)
 keymap('n', 'Y', 'yg$', opts)
@@ -146,9 +146,9 @@ fun! EmptyRegisters()
 endfun
 ]]
 
-keymap('n', '<M-,>', ':t. <CR>==',opts)
-keymap('i', '<M-,>', '<Esc>:t. <CR>==gi',opts)
-keymap('v', '<M-,>', ':t. <CR>gv=gv',opts)
+keymap('n', '<M-P>', ':t. <CR>==',opts)
+keymap('i', '<M-P>', '<Esc>:t. <CR>==gi',opts)
+keymap('v', '<M-P>', ':t. <CR>gv=gv',opts)
 
 -- Hop
 keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
@@ -156,3 +156,9 @@ keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint
 
 -- symbol-outline
 keymap("n", "<leader><leader>o", "<cmd>SymbolsOutline<cr>", opts)
+
+-- undo
+keymap("i", ",", ",<c-g>u", opts)
+keymap("i", ".", ".<c-g>u", opts)
+keymap("i", "!", "!<c-g>u", opts)
+keymap("i", "?", "?<c-g>u", opts)

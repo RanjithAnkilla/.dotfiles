@@ -174,7 +174,7 @@ return packer.startup(function(use)
   use "Pocco81/DAPInstall.nvim"
 
   use "McAuleyPenney/tidy.nvim"
-  use 'mg979/vim-visual-multi'
+  use "mg979/vim-visual-multi"
   use "sbdchd/neoformat"
 
   -- Automatically set up your configuration after cloning packer.nvim

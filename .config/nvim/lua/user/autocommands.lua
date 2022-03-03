@@ -1,8 +1,8 @@
 vim.cmd [[
   augroup _general_settings
     autocmd!
-    autocmd FileType qf,help,man,lspinfo,spectre_panel nnoremap <silent> <buffer> q :close<CR> 
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
+    autocmd FileType qf,help,man,lspinfo,spectre_panel nnoremap <silent> <buffer> q :close<CR>
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd CmdWinEnter * quit
@@ -22,7 +22,7 @@ vim.cmd [[
 
   augroup _auto_resize
     autocmd!
-    autocmd VimResized * tabdo wincmd = 
+    autocmd VimResized * tabdo wincmd =
   augroup end
 
   augroup _alpha
@@ -47,12 +47,13 @@ vim.cmd [[
 
   " set updatetime=1000
   " autocmd CursorHold,CursorHoldI * silent! wall
+
+  " Autoformat
+  augroup _lsp
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.formatting()
+  augroup end
 ]]
+
 -- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif
 -- autocmd BufEnter * if (exists('b:caret')) | call winrestview(b:caret) | endif
-
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end

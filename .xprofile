@@ -4,7 +4,7 @@ nitrogen --restore &
 
 systemctl --user start redshift
 
-autostart="alacritty firefox"
+autostart="mocicon clipit alacritty firefox"
 
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
