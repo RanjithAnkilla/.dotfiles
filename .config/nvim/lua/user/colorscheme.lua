@@ -1,12 +1,6 @@
 local colorscheme = "tokyonight"
 
 vim.cmd[[
-" " everforest
-" let g:everforest_background = 'medium'
-" let g:everforest_enable_italic = 1
-" " let g:everforest_transparent_background = 1
-" let g:everforest_current_word = "grey background"
-
 exec 'hi NonText guifg=none'
 " exec 'hi normal guibg=none'
 

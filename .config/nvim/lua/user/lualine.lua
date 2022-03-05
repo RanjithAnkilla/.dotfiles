@@ -19,7 +19,7 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
-  colored = false,
+  colored = true,
   update_in_insert = false,
   always_visible = true,
 }
@@ -52,7 +52,7 @@ local branch = {
 
 local location = {
   "location",
-  padding = 1,
+  padding = 0,
 }
 
 -- cool function for progress
@@ -62,7 +62,7 @@ local progress = function()
   local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
   local line_ratio = current_line / total_lines
   local index = math.ceil(line_ratio * #chars)
-  return chars[index]
+  return total_lines
 end
 
 -- local spaces = function()
@@ -93,17 +93,21 @@ lualine.setup {
   },
   sections = {
     -- lualine_a = { branch, diagnostics },
-    lualine_a = {avator, branch },
-    lualine_b = { diagnostics },
+    -- lualine_a = {avator, branch },
+    lualine_a = {},
+    -- lualine_b = { diagnostics },
+    lualine_b = {},
     -- lualine_c = { _gps },
     lualine_c = {
       { nvim_gps, cond = hide_in_width },
     },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
     -- lualine_x = { diff, spaces, "encoding", filetype },
-    lualine_x = { diff, filetype },
-    lualine_y = { location },
-    lualine_z = { progress },
+    -- lualine_y = { location },
+    -- lualine_z = { progress },
+    lualine_x = { diff, diagnostics, location, progress },
+    lualine_y = {},
+    lualine_z = {},
   },
   inactive_sections = {
     lualine_a = {},
