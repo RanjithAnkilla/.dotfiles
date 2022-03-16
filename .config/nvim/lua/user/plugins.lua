@@ -90,7 +90,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
-  use "sainnhe/everforest"
+  use "EdenEast/nightfox.nvim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin

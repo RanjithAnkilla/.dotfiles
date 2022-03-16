@@ -94,10 +94,12 @@ source $ZSH/oh-my-zsh.sh
 
 # configs
 alias zshconfig="nvim ~/.zshrc"
+alias nvimconfig="nvim ~/.config/nvim"
 alias xdconfig="nvim ~/.xmonad/xmonad.hs"
 alias xbconfig="nvim ~/.config/xmobar/nord-xmobarrc"
 alias alaconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias exzsh="exec zsh"
+# alias stylelint="npx stylelint"
 
 # Scripts
 alias pacupdate="~/.local/bin/pacupdate"
@@ -108,6 +110,8 @@ alias poweroff="systemctl poweroff"
 alias mntc="sudo mount /dev/sda2 ~/winc"
 alias mntd="sudo mount /dev/sda3 ~/wind"
 alias cdsmb="cd /run/user/1000/gvfs"
+alias pyta="/home/earth/.local/bin/pytube -a -t /home/earth/Music"
+alias pytv="/home/earth/.local/bin/pytube -t /home/earth/Music"
 
 alias luamake=/home/earth/lua-language-server/3rd/luamake/luamake
 
@@ -127,3 +131,5 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 # colorscript -r
 
 export EDITOR="/usr/bin/nvim"
+
+source /home/earth/.config/broot/launcher/bash/br

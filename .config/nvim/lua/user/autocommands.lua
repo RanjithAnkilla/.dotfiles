@@ -53,6 +53,8 @@ vim.cmd [[
     autocmd!
     autocmd BufWritePre * lua vim.lsp.buf.formatting()
   augroup end
+
+  autocmd CursorHold * echon ''
 ]]
 
 -- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif

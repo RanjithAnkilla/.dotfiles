@@ -13,3 +13,5 @@ PS1='[\u@\h \W]\$ '
 export EDITOR="/usr/bin/nvim"
 
 startx
+
+source /home/earth/.config/broot/launcher/bash/br

@@ -80,7 +80,7 @@ end
 
 M.on_attach = function(client, bufnr)
   -- notify(client.name)
-  if client.name == "tsserver" or client.name == "html" then
+  if client.name == "tsserver" or client.name == "html" or client.name == "jsonls" or client.name == "cssls" then
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
@@ -100,7 +100,7 @@ M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 function M.enable_format_on_save()
   vim.cmd [[
     augroup format_on_save
-      autocmd! 
+      autocmd!
       autocmd BufWritePre * lua vim.lsp.buf.formatting()
     augroup end
   ]]

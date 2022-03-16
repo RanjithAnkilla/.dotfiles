@@ -20,49 +20,44 @@ local diagnostics = {
   sections = { "error", "warn" },
   symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
   colored = true,
+  diagnostics_color = {
+    error = {fg = '#e07a5f'}, -- Changes diagnostics' error color.
+    warn  = {fg = '#f2cc8f'},  -- Changes diagnostics' warn color.
+    info  = '',  -- Changes diagnostics' info color.
+    hint  = '',  -- Changes diagnostics' hint color.
+  },
   update_in_insert = false,
   always_visible = true,
 }
 
 local diff = {
   "diff",
-  colored = false,
+  colored = true,
+  diff_color = {
+    added    = {fg = '#81b29a'},
+    modified = {fg = '#f2cc8f'},
+    removed  = {fg = '#86abdc'},
+  },
   symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
   cond = hide_in_width,
 }
 
-local mode = {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-}
-
-local filetype = {
-  "filetype",
-  icons_enabled = false,
-  icon = nil,
-}
-
-local branch = {
-  "branch",
-  icons_enabled = true,
-  icon = "",
-}
+-- local branch = {
+--   "branch",
+--   icons_enabled = true,
+--   icon = "",
+-- }
 
 local location = {
   "location",
   padding = 0,
 }
 
--- cool function for progress
 local progress = function()
   local current_line = vim.fn.line "."
   local total_lines = vim.fn.line "$"
-  local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-  local line_ratio = current_line / total_lines
-  local index = math.ceil(line_ratio * #chars)
-  return total_lines
+  local persent = math.floor(current_line * 100 / total_lines)
+  return tostring('|' .. persent .. '|')
 end
 
 -- local spaces = function()
@@ -78,9 +73,32 @@ local nvim_gps = function()
   end
 end
 
-local avator = function()
-  return ''
-end
+-- local buffers = {
+--   'buffers',
+--   show_filename_only = true,   -- Shows shortened relative path when set to false.
+--   show_modified_status = true, -- Shows indicator when the buffer is modified.
+--
+--   mode = 0, -- 0: Shows buffer name
+--   -- 1: Shows buffer index (bufnr)
+--   -- 2: Shows buffer name + buffer index (bufnr)
+--
+--   max_length = vim.o.columns * 2 / 3, -- Maximum width of buffers component,
+--   -- it can also be a function that returns
+--   -- the value of `max_length` dynamically.
+--   filetype_names = {
+--     TelescopePrompt = 'Telescope',
+--     dashboard = 'Dashboard',
+--     packer = 'Packer',
+--     fzf = 'FZF',
+--     alpha = 'Alpha'
+--   }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
+--
+--   buffers_color = {
+--     -- Same values as the general color option can be used here.
+--     active = {fg = '#86abdc', bg = '', gui='bold'},     -- Color for active buffer.
+--     inactive = {fg='#6c757d', bg =''}, -- Color for inactive buffer.}
+--   }
+-- }
 
 lualine.setup {
   options = {
@@ -92,20 +110,12 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    -- lualine_a = { branch, diagnostics },
-    -- lualine_a = {avator, branch },
     lualine_a = {},
-    -- lualine_b = { diagnostics },
     lualine_b = {},
-    -- lualine_c = { _gps },
     lualine_c = {
-      { nvim_gps, cond = hide_in_width },
+    { nvim_gps, cond = hide_in_width },
     },
-    -- lualine_x = { "encoding", "fileformat", "filetype" },
-    -- lualine_x = { diff, spaces, "encoding", filetype },
-    -- lualine_y = { location },
-    -- lualine_z = { progress },
-    lualine_x = { diff, diagnostics, location, progress },
+    lualine_x = { location, progress, 'branch', diff, diagnostics },
     lualine_y = {},
     lualine_z = {},
   },
@@ -117,6 +127,13 @@ lualine.setup {
     lualine_y = {},
     lualine_z = {},
   },
-  tabline = {},
+  -- tabline = {
+  --   lualine_a = {buffers},
+  --   lualine_b = {},
+  --   lualine_c = {},
+  --   lualine_x = {'branch'},
+  --   lualine_y = {diff},
+  --   lualine_z = {'tabs'}
+  -- },
   extensions = {},
 }

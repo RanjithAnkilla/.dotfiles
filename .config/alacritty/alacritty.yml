@@ -108,30 +108,32 @@ window:
 #multiplier: 3
 
 # Font configuration
+#DankMono Nerd Font Mono
+#SFMono Nerd Font Mono
 font:
   normal:
-    family: DankMono Nerd Font Mono
+    family: SF Mono
 
     style: Regular
 
   # Bold font face
   bold:
-    family: DankMono Nerd Font Mono
+    family: SF Mono
 
     style: Bold
 
   # Italic font face
   italic:
-    family: DankMono Nerd Font Mono
+    family: SF Mono
 
     style: Italic
 
   # Bold italic font face
   bold_itali:
-    family: DankMono Nerd Font Mono
+    family: SF Mono
     style: Bold Italic
 
-  size: 14.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -145,7 +147,7 @@ font:
   # right, increasing `y` moves the glyph upward.
   glyph_offset:
     x: 0
-    y: -1
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -161,7 +163,7 @@ font:
   #builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # TokyoNight Alacritty Colors
 colors:

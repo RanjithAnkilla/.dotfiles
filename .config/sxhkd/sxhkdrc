@@ -1,11 +1,14 @@
-super + b
+super + f
   firefox
 
-super + e
+super + r
   alacritty -e ranger
 
 super + ctrl + {s,r,p}
   systemctl {suspend,reboot,poweroff}
 
-super + v + {i,d,m}
+super + {i,d,m}
   {pamixer --allow-boost -i 5 && pkill -RTMIN+10 dwmblocks,pamixer --allow-boost -d 5 && pkill -RTMIN+10 dwmblocks,pamixer -t && pkill -RTMIN+10 dwmblocks}
+
+super + t
+   showtime
