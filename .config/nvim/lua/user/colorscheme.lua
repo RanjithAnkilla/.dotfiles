@@ -16,3 +16,4 @@ exec 'hi StatusLine guibg=none'
 
 " exec 'hi ColorColumn ctermbg=lightgrey guibg=lightgrey'
 ]]
+vim.g.tokyonight_italic_comments = true

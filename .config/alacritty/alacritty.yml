@@ -133,14 +133,14 @@ font:
     family: SF Mono
     style: Bold Italic
 
-  size: 13.0
+  size: 12.8
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   offset:
     x: 0
-    y: 0
+    y: 6
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -375,7 +375,7 @@ colors:
 # When set to `true`, selected text will be copied to the primary clipboard.
 #save_to_clipboard: false
 
-#cursor:
+cursor:
 # Cursor style
 #style:
 # Cursor shape
@@ -412,7 +412,10 @@ colors:
 
 # Thickness of the cursor relative to the cell width as floating point number
 # from `0.0` to `1.0`.
-#thickness: 0.15
+cursor:
+  style:
+    shape: Beam
+  thickness: 0.01
 
 # Live config reload (changes require restart)
 #live_config_reload: true

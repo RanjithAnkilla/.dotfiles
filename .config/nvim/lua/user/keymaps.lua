@@ -147,18 +147,31 @@ endfun
 ]]
 
 keymap('n', '<M-P>', ':t. <CR>==',opts)
-keymap('i', '<M-P>', '<Esc>:t. <CR>==gi',opts)
+keymap('n', '<M-B>', ':t0 <CR>==',opts)
+keymap('n', '<M-E>', ':t$ <CR>==',opts)
+keymap('i', '<M-P>', '<ESC>:t. <CR>==gi',opts)
+keymap('i', '<M-B>', '<ESC>:t0 <CR>==gi',opts)
+keymap('i', '<M-E>', '<ESC>:t$ <CR>==gi',opts)
 keymap('v', '<M-P>', ':t. <CR>gv=gv',opts)
+keymap('v', '<M-B>', ':t0 <CR>gv=gv',opts)
+keymap('v', '<M-E>', ':t$ <CR>gv=gv',opts)
 
 -- Hop
 keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
 keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
 
 -- symbol-outline
-keymap("n", "<leader><leader>o", "<cmd>SymbolsOutline<cr>", opts)
+keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>", opts)
 
 -- undo
 keymap("i", ",", ",<c-g>u", opts)
 keymap("i", ".", ".<c-g>u", opts)
 keymap("i", "!", "!<c-g>u", opts)
 keymap("i", "?", "?<c-g>u", opts)
+
+-- delete all lines
+keymap('n', '<leader>d', "<esc>ggdG<cr>==gi", opts)

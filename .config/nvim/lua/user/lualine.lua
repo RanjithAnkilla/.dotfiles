@@ -57,7 +57,7 @@ local progress = function()
   local current_line = vim.fn.line "."
   local total_lines = vim.fn.line "$"
   local persent = math.floor(current_line * 100 / total_lines)
-  return tostring('|' .. persent .. '|')
+  return tostring(persent .. '%%')
 end
 
 -- local spaces = function()
