@@ -7,6 +7,7 @@ local icons = require "user.icons"
 
 local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = {
+  "~|| Get The Work Done ||~"
 }
 dashboard.section.buttons.val = {
   dashboard.button("f", icons.documents.Files .. " Find file", ":Telescope find_files <CR>"),
@@ -24,11 +25,11 @@ dashboard.section.buttons.val = {
 }
 local function footer()
   -- NOTE: requires the fortune-mod package to work
-  -- local handle = io.popen("fortune")
-  -- local fortune = handle:read("*a")
-  -- handle:close()
-  -- return fortune
-  return ""
+  local handle = io.popen("fortune -n 80")
+  local fortune = handle:read("*a")
+  handle:close()
+  return '______________________________________________________________________\n' .. fortune
+  -- return ""
 end
 
 dashboard.section.footer.val = footer()

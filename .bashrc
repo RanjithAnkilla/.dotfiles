@@ -15,3 +15,7 @@ export EDITOR="/usr/bin/nvim"
 startx
 
 source /home/earth/.config/broot/launcher/bash/br
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+

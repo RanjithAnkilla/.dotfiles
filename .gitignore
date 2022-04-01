@@ -95,3 +95,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+.config/zsh/.zcompdump
+.config/zsh/plugins/

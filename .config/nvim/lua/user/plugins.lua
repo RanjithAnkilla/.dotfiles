@@ -176,6 +176,7 @@ return packer.startup(function(use)
   use "McAuleyPenney/tidy.nvim"
   use "mg979/vim-visual-multi"
   use "sbdchd/neoformat"
+  use "metakirby5/codi.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
