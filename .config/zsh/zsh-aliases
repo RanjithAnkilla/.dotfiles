@@ -79,14 +79,15 @@ alias pytv="/home/earth/.local/bin/pytube -t /home/earth/Music"
 alias luamake=/home/earth/lua-language-server/3rd/luamake/luamake
 
 alias exat2="exa --tree --level=2 --icons"
-alias l="exa -laF --icons always"
-alias ls="exa -F --icons --color always"
+alias l="exa -1lFa --icons --color always --sort=type"
+alias ls="exa -1F --icons --color always --sort=type"
 alias paget="pamixer --get-volume"
 alias paset="pamixer --set-volume"
 alias pabi="pamixer --allow-boost -i"
 alias pabd="pamixer --allow-boost -d"
 alias pkillblocksv="pkill -RTMIN+10 dwmblocks"
 
+alias ll="exa -1Fa --icons --sort=type | bat --theme base16-256 --style numbers,grid"
 
 # case "$(uname -s)" in
 
