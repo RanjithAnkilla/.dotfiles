@@ -112,25 +112,25 @@ window:
 #SFMono Nerd Font Mono
 font:
   normal:
-    family: SF Mono
+    family: SFMono Nerd Font Mono
 
     style: Regular
 
   # Bold font face
   bold:
-    family: SF Mono
+    family: SFMono Nerd Font Mono
 
     style: Bold
 
   # Italic font face
   italic:
-    family: SF Mono
+    family: SFMono Nerd Font Mono
 
     style: Italic
 
   # Bold italic font face
   bold_itali:
-    family: SF Mono
+    family: s
     style: Bold Italic
 
   size: 12.8

@@ -79,7 +79,8 @@ alias pytv="/home/earth/.local/bin/pytube -t /home/earth/Music"
 alias luamake=/home/earth/lua-language-server/3rd/luamake/luamake
 
 alias exat2="exa --tree --level=2 --icons"
-alias l="exa --icons -laF"
+alias l="exa -laF --icons always"
+alias ls="exa -F --icons --color always"
 alias paget="pamixer --get-volume"
 alias paset="pamixer --set-volume"
 alias pabi="pamixer --allow-boost -i"
@@ -87,21 +88,21 @@ alias pabd="pamixer --allow-boost -d"
 alias pkillblocksv="pkill -RTMIN+10 dwmblocks"
 
 
-case "$(uname -s)" in
+# case "$(uname -s)" in
 
-Darwin)
-	# echo 'Mac OS X'
-	alias ls='ls -G'
-	;;
-
-Linux)
-	alias ls='ls --color=auto'
-	;;
-
-CYGWIN* | MINGW32* | MSYS* | MINGW*)
-	# echo 'MS Windows'
-	;;
-*)
-	# echo 'Other OS'
-	;;
-esac
+# Darwin)
+# 	# echo 'Mac OS X'
+# 	alias ls='ls -G'
+# 	;;
+#
+# Linux)
+# 	# alias ls='ls --color=auto'
+# 	;;
+#
+# CYGWIN* | MINGW32* | MSYS* | MINGW*)
+# 	# echo 'MS Windows'
+# 	;;
+# *)
+# 	# echo 'Other OS'
+# 	;;
+# esac
