@@ -1,4 +1,5 @@
-local colorscheme = "tokyonight"
+-- local colorscheme = "tokyonight"
+local colorscheme = "nightfly"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -16,4 +17,6 @@ exec 'hi StatusLine guibg=none'
 
 " exec 'hi ColorColumn ctermbg=lightgrey guibg=lightgrey'
 ]]
-vim.g.tokyonight_italic_comments = true
+-- vim.g.tokyonight_italic_comments = true
+vim.g.nightflyUnderlineMatchParen = 1
+vim.g.nightflyWinSeparator = 2

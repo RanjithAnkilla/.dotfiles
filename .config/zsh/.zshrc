@@ -35,14 +35,13 @@ autoload -Uz colors && colors
 
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
+# source "$ZDOTDIR/zsh-git"
 
 # Normal files to source
 zsh_add_file "zsh-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
-
-zsh_add_file "zsh-git"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
@@ -129,3 +128,6 @@ eval "`fnm env`"
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 fpath=(path/to/zsh-completions/src $fpath)
+
+# fuck
+eval $(thefuck --alias)

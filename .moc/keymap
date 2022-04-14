@@ -65,7 +65,7 @@ quit_client           = q
 quit                  = Q
 
 # Menu and interface control keys:
-go                    = o
+go                    = l
 menu_down             = j
 menu_up               = k
 menu_page_down        = M-D
