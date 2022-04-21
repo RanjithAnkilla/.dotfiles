@@ -17,7 +17,7 @@ null_ls.setup {
       extra_filetypes = { "toml", "solidity" },
       extra_args = { "--single-quote", "--jsx-single-quote" },
     },
-    formatting.black.with { extra_args = { "--fast", "--line-length 80" } },
+    formatting.black.with { extra_args = { "--fast"} },
     -- formatting.stylua,
     diagnostics.eslint,
     diagnostics.stylelint,
