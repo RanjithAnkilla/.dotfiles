@@ -90,7 +90,8 @@ return packer.startup(function(use)
   -- Colorschemes
   use "folke/tokyonight.nvim"
   use 'bluz71/vim-nightfly-guicolors'
-  use 'xiyaowong/nvim-cursorword'
+  use "rebelot/kanagawa.nvim"
+  -- use 'xiyaowong/nvim-cursorword'
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin

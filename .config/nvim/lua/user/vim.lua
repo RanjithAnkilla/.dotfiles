@@ -3,6 +3,7 @@ vim.cmd([[
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'mattn/emmet-vim'
+Plug 'jmckiern/vim-shoot', { 'do': '\"./install.py\" geckodriver' }
 
 call plug#end()
 

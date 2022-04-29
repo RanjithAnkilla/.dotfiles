@@ -40,7 +40,7 @@ luac.out
 *.hex
 
 nvim/plugin
-.config/nvim/plugin/*
+./.config/nvim/plugin/
 
 # Prerequisites
 *.d
@@ -96,5 +96,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-.config/zsh/.zcompdump
-.config/zsh/plugins/
+./.config/zsh/.zcompdump
+./.config/zsh/plugins/
