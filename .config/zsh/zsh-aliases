@@ -51,15 +51,15 @@ alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 
 # alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh""
 
-alias m="git checkout master"
-alias s="git checkout stable"
+# alias m="git checkout master"
+# alias s="git checkout stable"
 
 # if [[ $TERM == "xterm-kitty" ]]; then
 #   alias ssh="kitty +kitten ssh"
 # fi
 
 # configs
-alias alaconfig="nvim ~/.config/alacritty/alacritty.yml"
+# alias alaconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias exzsh="exec zsh"
 # alias stylelint="npx stylelint"
 
@@ -69,8 +69,8 @@ alias pacupdate="~/.local/bin/pacupdate"
 alias suspend="systemctl suspend"
 alias reboot="systemctl reboot"
 alias poweroff="systemctl poweroff"
-alias mntc="sudo mount /dev/sda2 ~/winc"
-alias mntd="sudo mount /dev/sda3 ~/wind"
+alias mnto="sudo mount /dev/sdb1 /home/earth/one -o umask=022,rw,uid=1000,gid=984"
+alias unto="sudo umount /dev/sdb1"
 alias cdsmb="cd /run/user/1000/gvfs"
 
 alias pyta="/home/earth/.local/bin/pytube -a -t /home/earth/Music"
